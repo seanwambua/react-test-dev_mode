@@ -4,6 +4,12 @@ export default class Counter extends Component {
   state = {
     count: 0,
   };
+
+  handleIncrement = (product) => {
+    console.log(product);
+    this.setState({ count: this.state.count + 1 });
+  };
+
   styles = {
     fontSize: 20,
     fontWeight: "bold",
@@ -15,7 +21,12 @@ export default class Counter extends Component {
           {" "}
           {this.formatCount()}
         </span>
-        <button className="btn btn-primary btn-sm">Increment</button>
+        <button
+          onClick={() => this.handleIncrement({ id: this.state.count })}
+          className="btn btn-primary btn-sm"
+        >
+          Increment
+        </button>
       </div>
     );
   }
