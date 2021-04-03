@@ -11,8 +11,11 @@ export default class Counter extends Component {
   render() {
     return (
       <div>
-        <span> {this.formatCount()}</span>
-        <button>Increment</button>
+        <span style={this.styles} className={this.getBadgeClasses()}>
+          {" "}
+          {this.formatCount()}
+        </span>
+        <button className="btn btn-primary btn-sm">Increment</button>
       </div>
     );
   }
