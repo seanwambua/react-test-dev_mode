@@ -5,16 +5,12 @@ export default class Counter extends Component {
     count: 0,
   };
 
-  handleIncrement = (product) => {
-    console.log(product);
-    this.setState({ count: this.state.count + 1 });
-  };
-
   styles = {
     fontSize: 20,
     fontWeight: "bold",
   };
   render() {
+    console.log("props", this.props);
     return (
       <div>
         <span style={this.styles} className={this.getBadgeClasses()}>
@@ -30,6 +26,11 @@ export default class Counter extends Component {
       </div>
     );
   }
+
+  handleIncrement = (product) => {
+    console.log(product);
+    this.setState({ count: this.state.count + 1 });
+  };
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
