@@ -13,6 +13,7 @@ export default class Counter extends Component {
     console.log("props", this.props);
     return (
       <div>
+        {this.props.children}
         <span style={this.styles} className={this.getBadgeClasses()}>
           {" "}
           {this.formatCount()}
@@ -39,7 +40,7 @@ export default class Counter extends Component {
   }
 
   formatCount() {
-    const { value: value } = this.state;
+    const { value } = this.state;
     return value === 0 ? "Zero" : value;
   }
 }
